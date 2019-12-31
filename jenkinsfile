@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('git')  {
+              git 'https://github.com/DasaradhBetha9/game-of-life.git'
+        }
+        stage('mvn')  {
+              sh 'mvn package'
+         }
+        stage('list')  {
+              sh 'ls -al'
+          }
+       }
+}     
